@@ -1,6 +1,12 @@
 :root {
   --card-width: 400px;
+  --card-min-width: 270px;
+  --main-color: #ababab;
+  font-size: calc(0.04 * var(--card-width));
+  font-family: sans-serif;
+  font-weight: 100;
   text-align: center;
+  color: var(--main-color);
 }
 
 * {
@@ -9,16 +15,16 @@
 
 body {
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.801);
+  background-color: #240044;
 }
 
 .containerCard {
-  max-width: 1320px;
+  max-width: 1300px;
   display: flex;
   justify-content: center;
   background: url(../img/bg/bgContainer.png);
   background-size: cover;
-  background-position: center center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-color: black;
   margin: 0 auto;
@@ -26,15 +32,17 @@ body {
 
 .userCard {
   max-width: var(--card-width);
+  min-width: var(--card-min-width);
   background: #fff;
-  margin: 100px 20px;
-  border-radius: 20px;
+  margin: calc(0.5 * var(--card-width)) calc(0.05 * var(--card-width));
+  padding: 0 calc(0.13 * var(--card-width));
+  border-radius: 15px;
 }
 
 .cardHeader > img {
   z-index: 1;
   position: relative;
-  top: -244px;
+  top: calc(-0.61 * var(--card-width));
   width: calc(0.4 * var(--card-width));
   height: calc(0.4 * var(--card-width));
   border-radius: 50%;
@@ -44,7 +52,7 @@ body {
 
 .circle {
   position: relative;
-  top: -80px;
+  top: calc(-0.2 * var(--card-width));
 }
 
 .circle::before {
@@ -57,13 +65,76 @@ body {
   border-radius: 50%;
 }
 
+h1 {
+  margin-top: calc(-0.58 * var(--card-width));
+  font-size: 2.5rem;
+}
+
+.cardHeader > p {
+  margin-top: calc(0.025 * var(--card-width));
+}
+
+.textInfo {
+  font-style: italic;
+}
+
+.line {
+  margin-top: calc(0.05 * var(--card-width));
+}
+
+.line::before {
+  content: "";
+  display: block;
+  margin: auto;
+  height: calc(0.003 * var(--card-width));
+  background-color: rgba(170, 169, 169, 0.24);
+}
+
+h2 {
+  font-size: 1.7rem;
+  margin-top: calc(0.05 * var(--card-width));
+}
+
+.followersPhoto {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: calc(0.038 * var(--card-width));
+}
+
+.followersLink {
+  text-decoration: none;
+  color: #4d4d4d;
+  border-radius: 50%;
+  padding: 0 calc(0.013 * var(--card-width));
+}
+
+.fa-plus-circle {
+  font-size: calc(0.12 * var(--card-width));
+}
+
 .followersPhoto > a > img {
-  width: calc(0.15 * var(--card-width));
-  height: calc(0.15 * var(--card-width));
+  width: calc(0.12 * var(--card-width));
+  height: calc(0.12 * var(--card-width));
   border-radius: 50%;
   object-fit: cover;
 }
 
-h1 {
-  margin-top: -230px;
+.cardFooter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: calc(0.11 * var(--card-width));
+}
+
+.cardFooter > a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.4rem;
+  padding: calc(0.05 * var(--card-width)) calc(0.03 * var(--card-width));
+  border-right: 1px solid rgba(170, 169, 169, 0.24);
+}
+
+.footerLink:last-child {
+  border-right: hidden;
 }
