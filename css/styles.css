@@ -71,8 +71,14 @@ h1 {
   font-size: 2.5rem;
 }
 
+.location {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
 .cardHeader > p {
   margin-top: calc(0.025 * var(--card-width));
+  margin-bottom: calc(0.025 * var(--card-width));
 }
 
 .textInfo {
